@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarmStock</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="container">
+
+        <h1>🌾 FarmStock</h1>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#crops">Crops</a>
+            <a href="#harvest">Harvest</a>
+            <a href="#sales">Sales</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================= -->
+
+    <section id="dashboard" class="section">
+
+        <h2>FarmStock Dashboard</h2>
+
+        <p>Manage your crops, harvest batches and sales</p>
+
+
+        <div class="dashboard">
+
+
+            <!-- TOTAL CROPS -->
+
+            <div class="card">
+
+                <h3>Total Crops</h3>
+
+                <div id="cropCount" class="number">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- TOTAL HARVEST -->
+
+            <div class="card">
+
+                <h3>Total Harvest Batches</h3>
+
+                <div id="harvestCount" class="number">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- TOTAL SALES -->
+
+            <div class="card">
+
+                <h3>Total Sales</h3>
+
+                <div id="salesCount" class="number">
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CROPS
+    ========================= -->
+
+    <section id="crops" class="section">
+
+        <h2>Crops</h2>
+
+        <p>View and manage available crops</p>
+
+
+        <!-- ADD CROP FORM -->
+
+        <div class="form">
+
+            <input
+                    type="text"
+                    id="cropName"
+                    placeholder="Crop Name"
+            >
+
+            <input
+                    type="text"
+                    id="cropCategory"
+                    placeholder="Category"
+            >
+
+            <button onclick="addCrop()">
+                + Add Crop
+            </button>
+
+        </div>
+
+
+        <!-- CROP TABLE -->
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Crop Name</th>
+                <th>Category</th>
+            </tr>
+
+            </thead>
+
+
+            <tbody id="cropTableBody">
+
+            <tr>
+                <td colspan="3">
+                    Loading crops...
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =========================
+         HARVEST
+    ========================= -->
+
+    <section id="harvest" class="section">
+
+        <h2>Harvest Batches</h2>
+
+        <p>View and manage harvested crop batches</p>
+
+
+        <!-- ADD HARVEST FORM -->
+
+        <div class="form">
+
+            <input
+                    type="number"
+                    id="harvestQuantity"
+                    placeholder="Quantity"
+            >
+
+
+            <input
+                    type="date"
+                    id="harvestDate"
+            >
+
+
+            <select id="harvestCrop">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+            </select>
+
+
+            <button onclick="addHarvest()">
+                + Add Harvest
+            </button>
+
+        </div>
+
+
+        <!-- HARVEST TABLE -->
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Quantity</th>
+                <th>Harvest Date</th>
+                <th>Crop</th>
+            </tr>
+
+            </thead>
+
+
+            <tbody id="harvestTableBody">
+
+            <tr>
+                <td colspan="4">
+                    Loading harvest batches...
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =========================
+         SALES
+    ========================= -->
+
+    <section id="sales" class="section">
+
+        <h2>Sales</h2>
+
+        <p>View and manage crop sales</p>
+
+
+        <!-- ADD SALE FORM -->
+
+        <div class="form">
+
+
+            <input
+                    type="number"
+                    id="saleQuantity"
+                    placeholder="Quantity"
+            >
+
+
+            <input
+                    type="number"
+                    id="salePrice"
+                    placeholder="Price"
+                    step="0.01"
+            >
+
+
+            <input
+                    type="date"
+                    id="saleDate"
+            >
+
+
+            <select id="saleCrop">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+            </select>
+
+
+            <button onclick="addSale()">
+                + Add Sale
+            </button>
+
+        </div>
+
+
+        <!-- SALES TABLE -->
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sale Date</th>
+                <th>Crop</th>
+            </tr>
+
+            </thead>
+
+
+            <tbody id="salesTableBody">
+
+            <tr>
+                <td colspan="5">
+                    Loading sales...
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
